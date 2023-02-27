@@ -17,7 +17,8 @@ runs:
       uses: asdf-vm/actions/setup@v1.1.0
       
     # Some tools fork processes in odd working directories. Adding dependencies to global helps.
-    - run: cp -f .tool-versions ~/.tool-versions 
+    - shell: bash
+      run: cp -f .tool-versions ~/.tool-versions 
 
     - name: Cache asdf tooling
       uses: actions/cache@v3
