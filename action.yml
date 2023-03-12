@@ -14,7 +14,7 @@ runs:
   using: composite
   steps:
     - name: Install asdf-vm
-      uses: asdf-vm/actions/setup@v1.1.0
+      uses: asdf-vm/actions/setup@v2.0.0
       
     # Some tools fork processes in odd working directories. Adding dependencies to global helps.
     - shell: bash
@@ -30,7 +30,7 @@ runs:
           ${{ env.ASDF_DIR }}/plugins
 
     - name: Install asdf-vm tools
-      uses: asdf-vm/actions/install@v1.1.0
+      uses: asdf-vm/actions/install@v2.0.0
       if: steps.cache.outputs.cache-hit != 'true'
       with:
         before_install: |
