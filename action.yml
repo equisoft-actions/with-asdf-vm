@@ -25,7 +25,7 @@ runs:
       working-directory: ${{ inputs.working-directory }}
       run: |
         cp -f .tool-versions ~/.tool-versions
-        if [ "${{ inputs.working-directory }}" != "." ]; then
+        if [ "${{ inputs.working-directory }}" != "." ] && [ "${{ inputs.working-directory }}" != "" ]; then
           cp -f .tool-versions ${{ github.workspace }}/.tool-versions
         fi
 
