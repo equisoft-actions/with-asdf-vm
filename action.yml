@@ -19,6 +19,8 @@ runs:
   steps:
     - name: Install asdf-vm
       uses: asdf-vm/actions/setup@v3.0.2
+      with:
+        asdf_branch: v0.15.0
 
     # Some tools fork processes in odd working directories. Adding dependencies to global helps.
     - shell: bash
@@ -42,6 +44,7 @@ runs:
       uses: asdf-vm/actions/install@v3.0.2
       if: steps.cache.outputs.cache-hit != 'true'
       with:
+        asdf_branch: v0.15.0
         before_install: |
           if [ -f "${ASDF_DIR}/plugins/nodejs/bin/import-release-team-keyring" ]; then
             ${ASDF_DIR}/plugins/nodejs/bin/import-release-team-keyring
