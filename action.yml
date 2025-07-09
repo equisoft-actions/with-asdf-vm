@@ -33,7 +33,7 @@ runs:
       uses: actions/cache@v4
       id: cache
       with:
-        key: asdf-${{ runner.os }}-${{ hashFiles('.tool-versions') }}
+        key: asdf-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('.tool-versions') }}
         path: |
           ${{ env.ASDF_DIR }}/installs
           ${{ env.ASDF_DIR }}/plugins
